@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/diary",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Diary\\": "app/",
+            "Modules\\Diary\\Database\\Factories\\": "database/factories/",
+            "Modules\\Diary\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Diary\\Tests\\": "tests/"
+        }
+    }
+}

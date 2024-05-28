@@ -1,0 +1,11 @@
+{
+    "name": "Diary",
+    "alias": "diary",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Diary\\Providers\\DiaryServiceProvider"
+    ],
+    "files": []
+}
