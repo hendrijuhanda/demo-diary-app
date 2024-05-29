@@ -24,6 +24,7 @@ export default defineConfig(({ command, mode }) => {
             new URL("./resources/react", import.meta.url)
           ),
         },
+        { find: "@mui/material", replacement: "@mui/joy" },
       ],
     },
 

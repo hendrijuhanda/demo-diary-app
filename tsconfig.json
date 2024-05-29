@@ -22,7 +22,8 @@
 
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./resources/react/*"]
+      "@/*": ["./resources/react/*"],
+      "@mui/material": ["./node_modules/@mui/joy"]
     }
   },
   "include": ["env.d.ts", "resources/react/**/*", "resources/js/**/*"],
