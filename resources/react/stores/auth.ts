@@ -16,6 +16,7 @@ interface AuthState {
     password: string;
     password_confirmation: string;
   }) => Promise<AxiosResponse>;
+  logoutRequest: () => Promise<AxiosResponse>;
   initToken: () => void;
   setToken: (token: string) => void;
   deleteToken: () => void;
@@ -28,6 +29,17 @@ export const useAuth = create<AuthState>((set, get) => ({
 
   sessionRequest: () => {
     const instance = apiClient();
+
+    instance.interceptors.response.use((response) => {
+      const data = response.data.data;
+
+      get().setUser({
+        name: data.name,
+        email: data.email,
+      });
+
+      return response;
+    });
 
     return instance.request({
       method: "get",
@@ -64,6 +76,28 @@ export const useAuth = create<AuthState>((set, get) => ({
       method: "POST",
       url: "/v1/register",
       data: payload,
+    });
+  },
+
+  logoutRequest: () => {
+    const instance = apiClient();
+
+    instance.interceptors.response.use(
+      (response) => {
+        get().deleteToken();
+        get().setUser(null);
+
+        return response;
+      },
+      () => {
+        get().deleteToken();
+        get().setUser(null);
+      }
+    );
+
+    return instance.request({
+      method: "POST",
+      url: "/v1/logout",
     });
   },
 

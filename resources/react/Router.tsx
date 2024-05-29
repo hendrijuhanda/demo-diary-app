@@ -3,14 +3,15 @@ import { Guard } from "./components/layouts/Guard";
 import { Main } from "./components/layouts/Main";
 import { Sign } from "./components/layouts/Sign";
 import { Single } from "./components/layouts/Single";
-import { Login } from "./components/views/login/Login";
-import { Register } from "./components/views/login/Register";
+import { Home } from "./components/views/home/Home";
+import { Login } from "./components/views/sign/Login";
+import { Register } from "./components/views/sign/Register";
 
 export const Router = () => {
   return (
     <Routes>
       <Route element={<Guard component={Main} />}>
-        <Route path="/" element={<div>index</div>} />
+        <Route path="/" element={<Home />} />
         <Route path="/diaries" element={<div>list</div>} />
       </Route>
 
