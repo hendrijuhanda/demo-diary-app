@@ -5,8 +5,15 @@ config:
   database: mysql:8.0
   webroot: ./public
 services:
+  node:
+    type: node:20
+    ports:
+      - 5173:5173
   pma:
     type: phpmyadmin
+tooling:
+  npm:
+    service: node
 proxy:
   pma:
     - pma.demo-diary-app.lndo.site
