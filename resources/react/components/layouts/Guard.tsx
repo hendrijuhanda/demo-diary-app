@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { ComponentType, useEffect } from "react";
 import { useErrorBoundary } from "react-error-boundary";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useShallow } from "zustand/react/shallow";
 
 interface GuardInterface {
@@ -14,16 +14,19 @@ interface GuardInterface {
 }
 
 export const Guard = (props: GuardInterface) => {
-  const { hideScreenLoader } = useLayout();
+  const { hideScreenLoader, showScreenLoader } = useLayout();
   const { sessionRequest } = useAuth();
   const { token } = useAuth(useShallow((state) => ({ token: state.token })));
   const { init } = useInitial();
+  const location = useLocation();
   const navigate = useNavigate();
   const { showBoundary } = useErrorBoundary();
 
   useEffect(() => {
-    if (!token) {
-      navigate("/login", { replace: true });
+    if (!token && location.pathname !== "/login") {
+      showScreenLoader();
+
+      window.location.href = "/login";
     }
   }, [token, navigate]);
 

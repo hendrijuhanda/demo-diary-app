@@ -21,7 +21,7 @@ export const Home = () => {
         />
       </div>
 
-      <div className="tw-w-24 tw-h-24 tw-rounded-full tw-overflow-hidden tw-border-2 tw-border-white tw-mb-4 tw-mt-36 tw-z-[1]">
+      <div className="tw-w-24 tw-h-24 tw-rounded-full tw-overflow-hidden tw-bg-white tw-border-2 tw-border-white tw-mb-4 tw-mt-36 tw-z-[1]">
         <img className="tw-w-full tw-h-full" src="/user.jpg" />
       </div>
 
@@ -36,7 +36,7 @@ export const Home = () => {
       </div>
 
       <div className="tw-text-center tw-z-[1]">
-        <Typography>
+        <Typography textColor="text.tertiary">
           In the quiet symphony of life, you are a delicate note, a whisper in
           the wind. Your eyes, like stars, hold galaxies of dreams. With a heart
           as deep as the ocean, you love fiercely. You are the sunrise after the

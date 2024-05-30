@@ -1,3 +1,9 @@
+import { Outlet } from "react-router-dom";
+
 export const Single = () => {
-  return <div>single</div>;
+  return (
+    <div>
+      <Outlet />
+    </div>
+  );
 };

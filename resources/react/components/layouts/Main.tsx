@@ -78,9 +78,9 @@ const LogoutBtn = () => {
 
 export const Main = () => {
   return (
-    <div className="tw-container tw-mx-auto tw-px-4">
-      <main className="tw-h-screen tw-flex tw-flex-col tw-items-stretch">
-        <div className="tw-flex-shrink-0 tw-py-4">
+    <main className="tw-h-screen tw-flex tw-flex-col tw-items-stretch">
+      <div className="tw-flex-shrink-0 tw-py-4">
+        <div className="tw-container tw-mx-auto tw-px-4">
           <div className="tw-flex tw-justify-between tw-items-center">
             <div>
               <Typography level="h1" fontSize="lg">
@@ -91,13 +91,17 @@ export const Main = () => {
             <LogoutBtn />
           </div>
         </div>
-        <div className="tw-flex-grow">
+      </div>
+      <div className="tw-flex-grow tw-overflow-y-auto tw-overflow-x-hidden">
+        <div className="tw-container tw-mx-auto tw-px-4">
           <Outlet />
         </div>
-        <div className="tw-flex-shrink-0">
+      </div>
+      <div className="tw-flex-shrink-0">
+        <div className="tw-container tw-mx-auto tw-px-4">
           <Menu />
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 };
