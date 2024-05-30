@@ -1,3 +1,39 @@
+## Prerequisite
+
+- PHP 8.3
+- Node 20
+- MySQL 8.0
+
+## Usage
+
+First, copy `.env.example` to `.env`. Specify the content to suit your environments.
+
+```
+APP_URL=http://localhost:8000
+
+DB_CONNECTION=mysql
+DB_HOST=database
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=laravel
+DB_PASSWORD=laravel
+```
+
+Then run these commands.
+
+```
+composer install
+php key:generate
+php storage:link
+php artisan migrate
+npm install
+npm run build
+
+php artisan serve --port=8000
+```
+
+The app should be running on `http://localhost:8000`.
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
