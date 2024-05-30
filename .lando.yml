@@ -9,6 +9,7 @@ services:
     type: node:20
     ports:
       - 5173:5173
+      - 8000:8000
   pma:
     type: phpmyadmin
 tooling:
